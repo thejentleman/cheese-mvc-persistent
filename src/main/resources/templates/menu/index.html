@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="fragments :: head"></head>
+    <body class="container">
+        <h1 th:text="${title}">Default</h1>
+        <nav th:replace="fragments :: navigation"></nav>
+        <br/>
+        <div>
+            <ul >
+                <li th:each="menu : ${Menus}">
+                    <a th:href="'/menu/view/' + ${menu.id}" th:text="${menu.name}">menu item</a>
+                </li>
+            </ul>
+        </div>
+        <br/>
+
+        <p><a href="menu/add">Add Menu</a>
+
+        </p>
+
+    </body>
+</html>

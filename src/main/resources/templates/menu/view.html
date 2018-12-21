@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="fragments :: head"></head>
+    <body class="container">
+        <h1 th:text="${title}">Default</h1>
+        <nav th:replace="fragments :: navigation"></nav>
+        <hr/>
+        <br/>
+        <ul >
+            <li th:each="menu : ${menu.cheeses}" th:text="${menu.name}"></li>
+        </ul>
+
+        <p th:unless="${menu.cheeses.size()}">No Cheeses yet</p>
+
+        <p><a th:href="'/menu/add-item/' + ${menu.id}">Add Cheese</a></p>
+    </body>
+</html>
